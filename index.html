@@ -1,0 +1,804 @@
+<html>
+   <head>
+      <meta charset ="UTF-8">
+      <title>Shimada Brother</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+   </head>
+   <style>
+      table,th,td {
+      border : 1px solid black;
+      border-collapse: collapse;
+      }
+      th,td {
+      padding: 10px;
+      }
+      .nav{
+      background-color:rgba(225,225,225,0.5);
+      padding: 30px;
+      margin: 30px;
+      border-radius: 22px;
+      font-family: serif;
+      }
+      #sideBar{
+      float: left;
+      }
+      #showCD{
+      float: left;
+      margin: 0 0 10px 10px;
+      }
+      .artistButton{
+      background-color: white; 
+      background-image:url('image/Back.jpg');
+      color: white; 
+      border: 4px solid #92A0A0;
+      }
+      .main {
+      transition-duration: 0.4s;
+      }
+      .mar1{
+      background-color: white;
+      }
+      body{
+      background-color: black;
+      color: white;
+      }
+      .color{
+      background-color:black ;
+      color: white;
+      }
+      .gall{
+      margin-right: 20px;
+      margin-left: 600px;
+      padding: 10px;
+      font-family: fantasy;
+      font-size: 5px;
+      }
+      .mar1{
+      background-color: black;
+      }
+      .about{
+      padding: 50px;
+      font-family: sans-serif;
+      font-size: 15px;
+      }
+      .de{
+      padding: 50px;
+      font-family: sans-serif;
+      font-size: 15px;
+      }
+      .cont{
+      padding: 50px;
+      font-family: fantasy;
+      font-size: 20px;
+      }
+      .lo{
+      margin-right: 20px;
+      margin-left: 600px;
+      padding: 10px;
+      }
+      .footer{
+      background-image: url("image/foot.jpg");
+      color: black;
+      }
+      .memb{
+      margin-right: 20px;
+      margin-left: 600px;
+      padding: 10px;
+      font-family: fantasy;
+      font-size: 23px;
+      }
+      img.resize  {
+      width: 100px;
+      height: 100px;
+      border: 0;
+      }
+      img:hover.resize  {
+      width: 150px;
+      height: 150px;
+      border: 0;
+      }
+      @-webkit-keyframes animatetop {
+      from {top:-300px; opacity:0} 
+      to {top:0; opacity:1}
+      }
+      @keyframes animatetop {
+      from {top:-300px; opacity:0}
+      to {top:0; opacity:1}
+      }
+      .modal {
+      display: none;
+      position: fixed;
+      z-index: 0; 
+      padding-top: 20px; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+      }
+      .modal2 {
+      display: none;
+      position: fixed;
+      z-index: 0; 
+      padding-top: 20px; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+      }
+      .modal3 {
+      display: none;
+      position: fixed;
+      z-index: 0; 
+      padding-top: 20px; 
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto; 
+      background-color: rgb(0,0,0); 
+      background-color: rgba(0,0,0,0.4); 
+      }
+      .modal-content {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 0px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+      }
+      .modal-content2 {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 1px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+      }
+      .modal-content3 {
+      position: relative;
+      background-color: #fefefe;
+      margin: auto;
+      padding: 0;
+      border: 0px solid #888;
+      width: 80%;
+      box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+      -webkit-animation-name: animatetop;
+      -webkit-animation-duration: 0.4s;
+      animation-name: animatetop;
+      animation-duration: 0.4s
+      }
+      .modal-header2 {
+      padding: 2px 16px;
+      background-image: url(ProjectWeb/black-background-block-shapes.jpg);
+      color: black;
+      }
+      .modal-header3 {
+      background-image: url("b.jpg");
+      }
+      .modal-body {
+      background-image: url("ProjectWeb/48c472edf8672cf11b59d3a10481340b.jpg");
+      color: white;
+      }
+      .modal-body2 {
+      background-color: white;
+      color: black;
+      }
+      .modal-body3 {
+      background-color: white;
+      color: black;
+      }
+      .modal-footer {
+      background-image: url(ProjectWeb/black-background-block-shapes.jpg);
+      color: white;
+      }
+      .close {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      }
+      .close:hover,
+      .close:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      }
+      .close2 {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      }
+      .close2:hover,
+      .close2:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      }
+      .close3 {
+      color: white;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      }
+      .close3:hover,
+      .close3:focus {
+      color: #000;
+      text-decoration: none;
+      cursor: pointer;
+      }
+      .center{
+      left: 100px;
+      }
+      .item img{
+      margin-left:400px;
+      }
+      .menu h1{
+      color: red;
+      text-align: center;
+      }
+      .logo{
+      width: 50px;
+      height: 70px;
+      }
+      .menu{
+      background-image: url(ProjectWeb/black-background-block-shapes.jpg);
+      padding: 1px 16px;
+      }
+      .video{
+      text-align: center;
+      }
+      h2{
+      color: grey;
+      font-size: 35px;
+      text-align: center;
+      }
+      h3{
+      font-size: 30px;
+      color: gray;
+      }.home{
+      width: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-right: 100px; 
+      background-color: #feffff;
+      border: 2px solid #80a1b4;
+      border-radius: 3px;
+      }
+      .nike{
+      width: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-right: 100px; 
+      background-color: #feffff;
+      border: 2px solid #80a1b4;
+      border-radius: 3px;
+      }
+      .adidas{
+      width: 80px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      margin-right: 100px; 
+      background-color: #feffff;
+      border: 2px solid #80a1b4;
+      border-radius: 3px;
+      }
+      #menu1{
+      background-color: black;
+      border-radius: 10px;
+      height: 100px;
+      padding-bottom: : 20px;
+      margin-right: : 50px;
+      text-align: center;
+      color: red;
+      }
+      .item img{
+      margin-left: 50px;
+      }
+      #logo{
+      width: 50px;
+      height: 70px;
+      }
+      #vid{
+      margin-left: 280px;
+      }
+      #close{
+      }
+      body{
+      margin: 0;
+      padding: 0;
+      background-attachment: fixed;
+      background-size: cover;
+      }
+   </style>
+   <div>
+      <body>
+         <a name="top"></a>
+         <div class="color">
+            <br>
+            <center>
+            <img src ="image/logo.png" width="130" height="80" border="1"><br><br>
+            <center><a href="#detail"><font color="#FFFFFF"><b>DETAIL</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="#gal"><font color="#FFFFFF"><b>GALLERY</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="#about"><font color="#FFFFFF"><b>ABOUT US</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="#loca"><font color="#FFFFFF"><b>STORE LOCATOR</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="#con"><font color="#FFFFFF"><b>CONTACT US</b></font></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+               <a href="#mem"><font color="#FFFFFF"><b>MEMBERS</b></font></a>
+         </div>
+         </center>
+         <HR Width = "80%" Align ="Center">
+         <div class="mar1">
+            <marquee behavior="scroll" direction="left" scrollamount="10">
+               <img src="image/logoShi.png" width="400" height="200"alt="Natural" />&nbsp;&nbsp;&nbsp;
+               <img src="image/Conv.png" width="500" height="400"alt="Natural" />&nbsp;&nbsp;&nbsp;
+               <img src="image/Van.png" width="500" height="400"alt="Natural" />&nbsp;&nbsp;&nbsp;
+               <img src="image/Nike.png" width="500" height="400"alt="Natural" />&nbsp;&nbsp;&nbsp;
+               <img src="image/Adidas.png" width="500" height="400"alt="Natural" />&nbsp;&nbsp;&nbsp;
+               <img src="image/Reebok.png" width="500" height="400"alt="Natural" />&nbsp;&nbsp;&nbsp;
+               <img src="image/timberland.png" width="500" height="400"alt="Natural" />
+            </marquee>
+         </div>
+         <div class="de">
+            <br><br><br><br><a name="detail"><img src="image/Detail1.png"></a><br>
+            <img src="image/kan.png"><br><br>
+            <button type="button" class="btn btn-default" onclick="displayCD(0)">CONVERSE</button>
+            <button type="button" class="btn btn-default" onclick="displayCD(1)">VANS</button>
+            <button type="button" class="btn btn-default" onclick="displayCD(2)">NIKE</button>
+            <button type="button" class="btn btn-default" onclick="displayCD(3)">ADIDAS</button>
+            <button type="button" class="btn btn-default" onclick="displayCD(4)">REEBOK</button>
+            <button type="button" class="btn btn-default" onclick="displayCD(5)">TIMBERLAND</button><br>
+            <div id='showCD'></div>
+         </div>
+         <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><a href="#top"><img src="image/arrow-up-on-a-black-circle-background.png"width="50" height="50"></a>
+   </div>
+   <script>
+      var x,xmlhttp,xmlDoc
+      xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", "shoes.xml", false);
+      xmlhttp.send();
+      xmlDoc = xmlhttp.responseXML; 
+      x = xmlDoc.getElementsByTagName("SHOES");
+      table="";
+      
+      for (i = 0; i <x.length; i++) {  
+        table += "<tr onclick='displayCD(" + i + ")'>";
+        table += "<td class='artistButton' >"
+        table += x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue;
+        table += "</td></tr>";
+      }
+      document.getElementById("demo").innerHTML = table;
+      
+      function displayCD(i) {
+        
+        document.getElementById("showCD").innerHTML = 
+        "<br><b>Brand : </b>" +
+        x[i].getElementsByTagName("TITLE")[0].childNodes[0].nodeValue + 
+        "<br><b>Name : </b>" +
+        x[i].getElementsByTagName("NAME")[0].childNodes[0].nodeValue +
+        "<br><b>Description : </b>" + 
+        x[i].getElementsByTagName("DESCRIPTION")[0].childNodes[0].nodeValue +"<br>"+
+        x[i].getElementsByTagName("DESCRIPTION1")[0].childNodes[0].nodeValue +"<br>"+
+        x[i].getElementsByTagName("DESCRIPTION2")[0].childNodes[0].nodeValue +"<br>"+
+        x[i].getElementsByTagName("DESCRIPTION3")[0].childNodes[0].nodeValue +"<br>"+
+        x[i].getElementsByTagName("DESCRIPTION4")[0].childNodes[0].nodeValue +"<br>"+
+        x[i].getElementsByTagName("DESCRIPTION5")[0].childNodes[0].nodeValue +
+        "<br><b>Color : </b>" + 
+        x[i].getElementsByTagName("COLOR")[0].childNodes[0].nodeValue +
+        "<br><b>Price : </b>" + 
+        x[i].getElementsByTagName("PRICE")[0].childNodes[0].nodeValue +
+        "<br><br><center><img src=image/" + 
+        x[i].getElementsByTagName("IMAGE")[0].childNodes[0].nodeValue+"></center>";
+      }
+   </script>
+   <div class="gall">
+   <br><br><br><br><br><a name="gal"><img src="image/Gallery.png"></a><br>
+   <img src="image/kan.png"><br><br>
+   <h3>Converse Jack Purcell </h3><img src="image/co/1.jpg" alt="animate" class="resize"><img src="image/co/2.jpg" alt="animate" class="resize"><img src="image/co/5.jpg" alt="animate" class="resize"><img src="image/co/4.jpg" alt="animate" class="resize"><br>
+   <h3>Vans Old Skool </h3>
+   <img src="image/va/1.jpg" alt="animate" class="resize"><img src="image/va/3.jpg" alt="animate" class="resize"><img src="image/va/4.jpg" alt="animate" class="resize"><img src="image/va/2.jpg" alt="animate" class="resize">
+   <h3>Nike Air Yeezy &nbsp;&nbsp;&nbsp;&nbsp;<button id="myBtn3">More...</button></h3>
+   <img src="image/ni/1.jpg" alt="animate" class="resize"><img src="image/ni/3.jpg" alt="animate" class="resize"><img src="image/ni/4.jpg" alt="animate" class="resize"><img src="image/ni/2.jpg" alt="animate" class="resize">
+   <h3>Adidas Yeezy&nbsp;&nbsp;&nbsp;&nbsp;<button id="myBtn">More...</button></h3><img src="image/ad/1.jpg" alt="animate" class="resize"><img src="image/ad/3.jpg" alt="animate" class="resize"><img src="image/ad/4.jpg" alt="animate" class="resize"><img src="image/ad/2.jpg" alt="animate" class="resize">
+   <h3>Reebok Rrail Running Men's All Terrain</h3><img src="image/re/1.jpg" alt="animate" class="resize"><img src="image/re/3.jpg" alt="animate" class="resize"><img src="image/re/4.jpg" alt="animate" class="resize"><img src="image/re/2.jpg" alt="animate" class="resize">
+   <h3>Timberland Killington Chukka Boots&nbsp;&nbsp;&nbsp;&nbsp;<button id="myBtn2">More...</button></h3><img src="image/ti/1.jpg" alt="animate" class="resize"><img src="image/ti/3.jpg" alt="animate" class="resize"><img src="image/ti/4.jpg" alt="animate" class="resize"><img src="image/ti/2.jpg" alt="animate" class="resize">
+   </div>
+   <br>
+   <p align="right"><a href="#top"><img src="image/arrow-up-on-a-black-circle-background.png"width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a></p>
+   <div class="about">
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br><br><a name="about"><img src="image/About.png"></a> <br>
+   <img src="image/kan.png"><br><br>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Shimada Brother began in 2008 as a rubber shoe company specializing in galoshes.<br> 
+   Soon after, we started using our rubber to make sneakers. In 2016, <br>
+   What didn’t stick was their intention. We made them to sink jump shots on the court.<br>
+   You, however, saw them as something more… and started wearing our sneakers to do whatever you wanted.<br>
+   You played music, made art, skated the streets and kicked back. You wore them as fashion.<br>
+   You wore them to work. You customized them with your personal style. You did everything to them,<br>
+   and in them. You saw our sneakers’ unlimited potential.</p><br>
+   <img src="image/company.jpg"class="img-rounded" width="550" height="320">
+   <a href="#top"><img src="image/arrow-up-on-a-black-circle-background.png" width="50" height="50"></a>
+   </div>
+   <div class="lo">
+   <br><br><br><br><br><br><a name="loca"><img src="image/Store.png"></a><br><br>
+   <img src="image/kan.png"><br><br>
+   <img src="image/009-map.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;CentralPlaza Rama II <br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/cen2.jpg"class="img-rounded" width="300" height="190"onmouseover="this.src='image/cen2.jpg' ;this.height=300;this.width=500"onmouseout="this.src='image/cen2.jpg';this.height=150;this.width=300"><br>
+   <img src="image/009-map.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;Central Festival Phuket<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="image/centrtalphuket.jpg"class="img-rounded" width="300" height="190"onmouseover="this.src='image/centrtalphuket.jpg' ;this.height=300;this.width=500"onmouseout="this.src='image/centrtalphuket.jpg';this.height=150;this.width=300">
+   <a href="#top"><img src="image/arrow-up-on-a-black-circle-background.png"width="50" height="50"></a>
+   </div>
+   <div class="cont">
+   <br><br><br><br><a name="con"><img src="image/Contact.png"></a><br>
+   <img src="image/kan.png"><br>
+   <br><img src="image/001-technology-2.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;02-9999999<br><br>
+   <img src="image/005-letter.png"width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;shimadabro@gmail.com<br><br>
+   <img src="image/008-facebook.png"width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;Shimada Brother<br><br>
+   <img src="image/007-twitter.png"width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;@ShimadaBro<br><br>
+   <img src="image/006-instagram.png"width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;@ShimadaBro<br><br>
+   <img src="image/lodge.png"width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;123 Village No.1 Kanjanapisek Road, Lam Luk Ka District,  Pathum Thani, 12110 
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="#top"><img src="image/arrow-up-on-a-black-circle-background.png"width="50" height="50"></a>
+   </div>	
+   <div class="memb">
+   <br><br><br><br><a name="mem"><img src="image/Members.png"></a><br><br>
+   <img src="image/kan.png"><br><br>
+   <img src="image/001.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59130500004&nbsp;&nbsp;&nbsp;Kanniphit&nbsp;    Buawanngam<br><br>
+   <img src="image/001.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59130500019&nbsp;&nbsp;&nbsp;Chinakit&nbsp;    Viriyaphon<br><br>
+   <img src="image/001.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59130500023&nbsp;&nbsp;&nbsp;Nutchaphon&nbsp; Phutthisophin  <br><br>
+   <img src="image/001.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59130500040&nbsp;&nbsp;&nbsp;Teetuch&nbsp; Jeeravarangkul<br><br>
+   <img src="image/002.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59130500046&nbsp;&nbsp;&nbsp;Pratumwan&nbsp; Ketbunjong <br><br>
+   <img src="image/002.png" width="50" height="50">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;59130500057&nbsp;&nbsp;&nbsp;Pimchanok &nbsp;Jarusutham&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+   <a href="#top"><img src="image/arrow-up-on-a-black-circle-background.png"width="50" height="50"></a>
+   </div>
+   <br><br><br>
+   <footer>
+   <div class="footer">
+   <br>
+   <center><em><p><b>Shimada Brother</b><br>
+   <em>123 Village No.1 Kanjanapisek Road, Lam Luk Ka District, Pathum Thani, 12110<br>
+   <em>Tel : 02-999-9999<br>
+   <em>shimadabro@gmail.com</em></center>
+   <p align="right"><em>&copy; shimada brother&nbsp;&nbsp;&nbsp;<em></p></div>
+   </footer>
+   <div id="myModal" class="modal">
+   <div class="modal-content">
+   <div class = "menu">
+   <span class="close">&times;</span>
+   <div id = "menu">
+   <h1><img src="ProjectWeb/323.jpg" class="logo">Adidas Yeezy Prirate Black</h1>
+   </div>
+   </div>
+   <div class="modal-body">
+   <hr>
+   <center><h3>Preview</h3></center>
+   <hr>
+   <div class="w3-content w3-section" style="max-width:2000px">
+   <!-- Indicators -->
+   <img class="mySlides w3-animate-fading" src="ProjectWeb/YeezyPr.jpg" style="width:100%">
+   <img class="mySlides w3-animate-fading" src="ProjectWeb/MG_0200-1170x780.jpg" style="width:100%">
+   <img class="mySlides w3-animate-fading" src="ProjectWeb/MG_0188.jpg" style="width:100%">
+   <img class="mySlides w3-animate-fading" src="ProjectWeb/YeezyP.jpg" style="width:100%">
+   <hr>
+   </div>
+   <section class="container">
+   <div class="rows">
+   <div class = "col-xs-7">
+   <h3>Review</h3>
+   <video controls="" style="width: 100%">
+   <source src="ProjectWeb/Unboxing The Kanye West Yeezy Boost 350 Black Review!.mp4" type="video/mp4">
+   <hr>
+   </video>
+   </div>
+   <div class = "col-xs-5">
+   <h3>History</h3>
+   <hr>
+   <p>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ตั้งแต่ปี 2013 เป็นต้นมาจนถึงปัจจุบันเรียกได้ว่าเป็นการกลับมาของยุคแห่ง Sneakers จริงๆ ไม่ว่าจะเป็นร้าน Sneakers ใหม่ๆและแบรนด์ Streetwear ที่เข้ามาเปิดในประเทศไทยมากขึ้น รวมถึง Sneaker Collection และเสื้อผ้ารุ่นลิมิตเต็ดมากมายที่เข้ามาอย่างไม่คาดฝัน จนหลายๆท่านตั้งตัวกันแทบไม่ทัน แต่ที่ฮือฮาที่สุดในปีนี้คงไม่พ้นการประกาศวางจำหน่าย 1 ในรองเท้าที่Sneakerheadทั่วโลกจับตามองอย่าง Yeezy นั้นเอง ซึ่งหลังจากปลายปี 2013 ที่ Kanye West ประกาศที่จะอำลา Nike เพื่อไปร่วมงานกับ Adidas แบรนด์คู่แข่งแทน ในที่สุดเมื่องช่วงต้นปี 2015 Kanye West ก็ได้ถือโอกาสปล่อย Yeezy Boost 750 (หรือบางคนเรียกว่า Yeezy3) ออกมาขายเป็นครั้งแรกในวันที่ 28 กพ 2015 และเรียกได้ว่าเป็นการพลิกโฉมของวงการ Fashion Sneakers ของยุคใหม่ไปสู่อีกขั้นนึงเลยทีเดียว
+   Adidas และ Kanye West ได้ส่ง Collection เสื้อผ้าและรองเท้าของเขาร่วมเดินใน Runway ที่ New York Fashion Week เมื่อเดือน มิย.ของปี2015 และเป็นครั้งแรกที่แฟนคลับได้เห็นเสื้อผ้า และรองเท้ารุ่นอื่นๆใน collection ด้วย ไม่ว่าจะเป็น Adidas Yeezy Boost 350 ทั้งสองสี รวมไปถึง Yeezy Boost 950 ที่รูปทรงเป็นเหมือนรองเท้าบูทสำหรับใส่เดินลุยหิมะ
+   และหลังจากนั้นไม่นาน Adidas Yeezy Boost 350 ได้ออกสีแรกคือสีเทาไปเมื่อวันที่ 27 มิย. โดยมีกำหนดวางจำหน่ายพร้อมกันทั่วโลก รวมถึงประเทศไทยด้วย และสีดำหรือ Pirate Black ก็ได้เข้ามาจำหน่ายในวันที่ 22 ส.ค. ที่ผ่านมา เพียงแค่ 51 คู่เท่านั้น </p>
+   <hr>
+   </div>
+   </div>
+   </section>
+   <br>
+   <section class="container">
+   <div class="rows">
+   <div class = "col-xs-7">
+   <h2>Detail</h2>
+   <ul> 
+   <li>Price: 200$ or 8490</li>
+   <li>Technology "Primeknit"</li> 
+   <li>ตัวรองเท้าจะมีรอยเย็บต่อตะเข็บอยู่แค่ชิ้นเดียวคือจากด้านหน้ารองเท้าขึ้นไปจนถึงลิ้นรองเท้า อีกด้านหนึ่งของรองเท้าจะใช้หนังกลับ หรือ suede เย็บติดเข้าไป</li>
+   <li>ชิ้นส่วนตรงนี้มีการปั๊ม YZY และ logo Adidas ไว้อย่างละข้าง</li>
+   <li>เชือกรองเท้าจะมาในรูปแบบที่เป็นเชือกเส้นกลม หรือ Rope lace สีเทาดำ</li>
+   <li>ด้านหลังของรองเท้าจะแถบเทปสีดำลายเป็นเส้นประสีแดงตรงส่วนนี้ช่วยในการดึงเพื่อให้สวมใส่ง่ายขึ้น โดยไม่ต้องใช้ shoehorn</li>
+   <li>พื้นรองเท้าจะเป็นพื้นยางสีดำทั้งชิ้น และมีน้ำหนักที่หนักกว่าพื้นโฟมของ Ultra boot อยู่นิดหน่อย </li>
+   </ul>
+   </div>
+   <div class = "col-xs-5">
+   <img src="ProjectWeb/MG_0177.jpg" style="width: 100%">
+   </div>
+   </section>
+   <br>
+   <hr>
+   <br>
+   <h2>Adidas Yeezy on Feet Cool!!!</h2>
+   <video controls="" style="width: 100%">
+   <source src="ProjectWeb/Adidas Yeezy Boost 350 Pirate Black - On Feet + Drone.mp4" type="video/mp4">
+   </div>
+   <div class="modal-footer">
+   <h3>TaloeyToey</h3>
+   </div>
+   </div>
+   </div>
+   <script>
+      var modal = document.getElementById('myModal');
+      
+      
+      var btn = document.getElementById("myBtn");
+      
+      
+      var span = document.getElementsByClassName("close")[0];
+      
+      
+      btn.onclick = function() {
+          modal.style.display = "block";
+      }
+      
+      span.onclick = function() {
+          modal.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+          if (event.target == modal) {
+              modal.style.display = "none";
+          }
+      }
+   </script>
+   <script>
+      var myIndex = 0;
+      carousel();
+      
+      function carousel() {
+          var i;
+          var x = document.getElementsByClassName("mySlides");
+          for (i = 0; i < x.length; i++) {
+             x[i].style.display = "none";  
+          }
+          myIndex++;
+          if (myIndex > x.length) {myIndex = 1}    
+          x[myIndex-1].style.display = "block";  
+          setTimeout(carousel, 3000);    
+      }
+   </script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <div id="myModal2" class="modal2">
+   <div class="modal-content2">
+   <div class="modal-header2">
+   <span class="close2">&times;</span>
+   <center><h3>TIMBERLAND MEN'S KILLINGTON CHUKKA BOOTS</h3></center>
+   </div>
+   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+   <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+   <li data-target="#carousel-example-generic" data-slide-to="4"></li>
+   </ol>
+   <center><div class="carousel-inner" role="listbox">
+   <div class="item active">
+   <div class="center">
+   <img src="ProjectWeb/download (1).png" class="center" alt="NAVY SMOOTH"></div>
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/download (2).png" alt="WHEAT NUBUCK">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/download (3).png" alt="BROWN FULL-GRAIN/MESH">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/download (4).png" alt="BLACK FULL-GRAIN/MESH">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/download.png" alt="GREY SMOOTH">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   </div></center>
+   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+   <span class="sr-only">Previous</span>
+   </a>
+   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+   <span class="sr-only">Next</span>
+   </a>
+   </div>
+   <div class="modal-body2">
+   <h3>&nbsp;&nbsp;&nbsp;REVIEW</h3>
+   <div class="video">
+   <video controls="">
+   <source src="ProjectWeb/Unboxing  Timberland Killington Boots  Mens Boots  Mainline Menswear.mp4" type="video/mp4">
+   </video></div>
+   <h2>INFORMATION</h2>
+   <ul > 
+   <li >Price: 125$</li>
+   <li>Combination full grain leather and mesh uppers offers lightweight protection and breathability.</li>
+   <li>Lace-up closure with pull tab.</li>
+   <li>Mesh linings are made with 50% PET (recycled plastic bottles).</li>
+   <li>OrthoLite® polyurethane footbed provides the cushioning and support you need.</li>
+   <li>SensorFlex™ technology for underfoot support, independent suspension, and flexibility.</li>
+   <li>Weight: 8 oz</li>
+   </ul>
+   <h2>DESCRIPTION</h2>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Our Killington men's chukkas dominate everything from city sidewalks to places off the beaten path.</p>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Active athletic outsoles take on the terrain of your day, while premium leathers and breathable mesh keep your feet protected and aired out.</p>
+   <br><br>
+   <p align="right"><em>&copy; Timberland&nbsp;&nbsp;&nbsp;<em></p></div>
+   </div>
+   </div>
+   <div class="modal-footer2">
+   <h3></h3>
+   </div>
+   </div>
+   </div>
+   <script>
+      var modal2 = document.getElementById('myModal2');
+      var btn2 = document.getElementById("myBtn2");
+      var span2 = document.getElementsByClassName("close2")[0];
+      btn2.onclick = function() {
+          modal2.style.display = "block";
+      }
+      span2.onclick = function() {
+          modal2.style.display = "none";
+      }
+      window.onclick = function(event) {
+          if (event.target == modal2) {
+              modal2.style.display = "none";
+          }
+      }
+   </script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <div id="myModal3" class="modal3">
+   <div class="modal-content3">
+   <div class="modal-header3">
+   <span class="close3">&times;</span>
+   <div id = "menu1">
+   <h1><img src="ProjectWeb/nike/Shimadaclan.png" id="logo">&nbsp Nike Air Yeezy</h1>
+   </div>
+   <br>
+   <br>
+   <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+   <ol class="carousel-indicators">
+   <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+   <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+   <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+   </ol>
+   <div class="carousel-inner" role="listbox">
+   <div class="item active">
+   <img src="ProjectWeb/nike/img/yeezy3.jpg" alt="...">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/nike/img/yeezy1.jpg" alt="...">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/nike/img/yeezy2.jpg" alt="...">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/nike/img/yeezy4.jpg" alt="...">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/nike/img/yeezy6.jpg" alt="...">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   <div class="item">
+   <img src="ProjectWeb/nike/img/yeeezy5.jpg" alt="...">
+   <div class="carousel-caption">
+   </div>
+   </div>
+   </div>
+   <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+   <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+   <span class="sr-only">Previous</span>
+   </a>
+   <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+   <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+   <span class="sr-only">Next</span>
+   </a>
+   </div>
+   <div class="modal-body3">
+   <section class="caontainer">
+   <div class="rows">
+   <div class = "col-xs-8">
+   <h3>Information</h3>
+   <hr>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;ถ้าพูดถึงรองเท้าที่เหล่า Sneaker Heads ทั่วโลกจับตาเฝ้าคอยกันมานานแสนนานอย่าง Nike Air Yeezy 2 "Red October" รองเท้า Signature ของ Kanye West ที่มีเรื่องราวมากมายอยู่เบื้องหลัง หลังจากท่ Kanye West ได้ย้ายหนีจาก Nike ไปอยู่กับ Adidas แต่ยังคงมีรองเท้ารุ่นนี้ค้างรอออกจำหน่ายอยู่ และที่แน่นอนเป็นรุ่นสุดท้ายของ Kanye West กับ Nike นั่นเอง ความจริงแล้ว Nike Air Yeezy 2 "Red October" มีกำหนดวางจำหน่ายตั้งแต่เดือนตุลาปี 2013 แต่ก็ถูกเลื่อนกำหนดวางจำหน่ายออกไปจนถึงเดือน พฤศจิกายน และก็เลื่อนอีกครั้งไปเป็นเดือน ธันวาคม โดยการประกาศข่าวของ Footlock ร้านรองเท้าชื่อดังใน USA แต่แล้วจนสุดท้ายก็เลื่อนออกไปแบบไม่มีกำหนด 
+   นอกเหนือจากข่าวลือต่างๆนาๆ เราก็เห็นศิลปินหลากหลายคนสวมใส่ใน Concert และใน Social Media อย่าง Instagram และ Twitter ทาง Macklemore หนึ่งในศิลปิน Hiphop ก็ได้สวมใส่ "Red October" ขึ้นเล่นในงานคอนเสิร์ตนับถอยหลังเข้าสู่ปี 2014 ที่ Time Square และที่สำคัญ Macklemore ได้โยน Nike Air Yeezy 2 "Red October" แจกให้กับคนดูหลังจากการแสดงจบอีกด้วย ทาง Soul4street ได้มีโอกาสสัมผัส Nike Air Yeezy 2 "Red October" ตัวเป็นๆ เราจึงได้นำมารีวิวให้กับ Sneker Heads ในไทยได้รู้จักกับรองเท้ารุ่นนี้มากขึ้น </p>
+   </div>  
+   </div>
+   <div class="rows">
+   <div class = "col-xs-4">
+   <h3>Release</h3>
+   <hr>
+   <p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Nike Air Yeezy 2 อยู่ดีๆ ก็ปล่อยวางจำหน่ายผ่าน Nike.com ในวันที่ 9 กุมภาพันธ์ แบบไม่บอกไม่กล่าวมากนัก เพียงแค่โพสใน Twitter ก่อนหน้าเวลาออกจำหน่ายเพียงไม่นาน และแน่นอน รองเท้ารุ่นนี้ถูกแฟนๆซื้อหมดเพียงไม่กี่นาทีในราคาเพียงแค่ 245 USD หรือประมาณ 8,000 บาท ความต้องการของเหล่า Sneaker Heads ทั่วทั้งมุมโลก ทำให้ราคาของรองเท้าวิ่งไปสูงลิบลับถึง 4-5,000 USD หรือประมาณ 150,000 บาทเลยทีเดียว </p>
+   </div>
+   </div>  
+   </section>
+   <video   width="600" height="400" controls id="vid">
+   <source src="ProjectWeb/nike/Nike Air Yeezy 2 Review On Feet.mp4" type="video/mp4">
+   </video>
+   <section class="caontainer">
+   <div class="rows">
+   <div class = "col-xs-12">
+   <h3>Review</h3>
+   <hr>
+   <p> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;กล่องของ Yeezy 2 "Red October" รุ่นนี้จะมาในกล่องสีแดง แกะกล่องออกมา จะมีถุงผ้า Mash Bag ที่มีปลายเชือกรองเท้าสีทองอยู่ที่ถุงด้วย ตัวรองเท้าวัสดุก็ยังคงเหมือนกับ Nike Air Yeezy 2 สีอื่นๆ คือ จะมีพื้นรองเท้าที่สามารถ Glow in the dark ได้ สีของรองเท้าจะเป็นสีแดง แต่ว่าจะไม่ได้แดงสด จะคล้ายๆกับสีแดงอมส้ม ติดกับพื้นจะเป็นขอบรองเท้าที่วัสดุเป็นหนังกลับหรือ Suede ถัดไปจากตัวหนังกลับ จะเป็นวัสดุ Ballistic Mesh Nylon และหนังพิมพ์ลาย python ด้านในพื้นรองเท้า จะทำจากหนังที่ถูกปั๊มลาย Logo ของ Yeezy ลงไป เชือกรองเท้าจะเป็นเหมือนเชือกที่มากับถุงผ้า โดยยังคงมีปลายเชือกที่เป็นสีทอง สามารถหมุนถอดได้ โดยรวมแล้วรองเท้ารุ่นนี้ถือว่าเป็นรองเท้าที่ใช้วัสดุดีในการทำมากๆ  ด้วยการที่ราคาไปไกลมากตั้งแต่ไม่กี่วันที่รองเท้ารุ่นนี้ออกจำหน่าย ทำให้อนาคตของรองเท้ารุ่นนี้จะยังคงไม่หยุดที่จะมีราคาสูงขึ้นไปเรื่อยๆ เพราะถ้าสังเกตุจาก Yeezy 2 สีอื่นๆ ในสัปดาห์แรกหลังจากที่รองเท้าออกจำหน่าย คนที่ได้รองเท้า และนำมาจำหน่ายขายต่อ ยังคงตั้งราคาไว้เพียงแค่ 1,500 เหรียญโดยประมาณเท่านั้น แต่ "Red October" ไปไกลถึง 5,000 เหรียญ ถ้าอีก 6 เดือนถึงหนึ่งปีข้างหน้า ราคาจะไปไกลขนาดไหน ต้องลองติดตามกัน</p>
+   </div>
+   </div>
+   </div>
+   </section>
+   <br>
+   <br>
+   <center><img src="ProjectWeb/nike/Shimadaclan.png" id="logo" ></center>
+   <br>
+   <script>
+      var modal3 = document.getElementById('myModal3');
+      
+      var btn3 = document.getElementById("myBtn3");
+      
+      var span3 = document.getElementsByClassName("close3")[0];
+      
+      btn3.onclick = function() {
+          modal3.style.display = "block";
+      }
+      
+      span3.onclick = function() {
+          modal3.style.display = "none";
+      }
+      
+      window.onclick = function(event) {
+          if (event.target == modal3) {
+              modal3.style.display = "none";
+          }
+      }
+   </script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> 
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+   <br>
+   </body>
+</html>
