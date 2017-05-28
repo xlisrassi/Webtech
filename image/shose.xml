@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CATALOG>
+	<SHOSE>
+		<TITLE>CONVERSE</TITLE>
+		<NANE>Converse Jack Purcell</NAME>
+		<DESCRIPTION>This is the iconic Converse Jack Purcell sneaker that has fundamentally gone unchanged since the 1930s. It has a durable canvas upper, canvas lining and removable EVA insert for comfort, traditional metal eyelets, rubber-wrapped midsole, classic light-blue rubber outsole, medial-side air vent holes for breathability and the unmistakable Jack Purcell smile on the toe cap.</DESCRIPTION>
+		<COLOR>White</COLOR>
+		<PRICE>2,400 BAHT</PRICE>
+		<IMAGE>image/1.jpg</IMAGE>
+	</SHOSE>
+	<SHOSE>
+		<TITLE>VANS</TITLE>
+		<NANE>Vans old skool</NAME>
+		<DESCRIPTION>Vans The Old Skool, Vans classic skate shoe and the first to bare the iconic side stripe, has a low-top lace-up silhouette with a durable suede and canvas upper with padded tongue and lining and Vans signature Waffle Outsole.</DESCRIPTION>
+		<COLOR>Black</COLOR>
+		<PRICE>2,900 BAHT</PRICE>
+		<IMAGE>image/11.png</IMAGE>
+	</SHOSE>
+	<SHOSE>
+		<TITLE>NIKE</TITLE>
+		<NANE>Nike Air Yeezy</NAME>
+		<DESCRIPTION>When it comes to retail releases, Kanye West can’t miss. From his work with the Swoosh to his work with the Stripes, nearly ever silo and color code he’s spawned has sold out and done so in record time. So, what would we get if we swapped a classic colorway he’s introduced with Nike on that of a model he made with adidas or Louis Vuitton — or vice versa? Well, we decided to see exactly what that would look like in the latest Photoshop Friday.</DESCRIPTION>
+		<COLOR>Grey</COLOR>
+		<PRICE>1,000,000 BAHT</PRICE>
+		<IMAGE>image/111.jpg</IMAGE>
+	</SHOSE>
+	<SHOSE>
+		<TITLE>ADIDAS</TITLE>
+		<NANE>Adidas Yeezy</NAME>
+		<DESCRIPTION>This is the iconic Converse Jack Purcell sneaker that has fundamentally gone unchanged since the 1930s. It has a durable canvas upper, canvas lining and removable EVA insert for comfort, traditional metal eyelets, rubber-wrapped midsole, classic light-blue rubber outsole, medial-side air vent holes for breathability and the unmistakable Jack Purcell smile on the toe cap.</DESCRIPTION>
+		<COLOR>White</COLOR>
+		<DESIGN>Low Top/Canvas</DESIGN>
+		<PRICE>2,400 BAHT</PRICE>
+		<IMAGE>image/1.jpg</IMAGE>
+	</SHOSE>
+	<SHOSE>
+		<TITLE>ONITSUKA TIGER</TITLE>
+		<NANE>Onitsuka tiger/NAME>
+		<DESCRIPTION>This is the iconic Converse Jack Purcell sneaker that has fundamentally gone unchanged since the 1930s. It has a durable canvas upper, canvas lining and removable EVA insert for comfort, traditional metal eyelets, rubber-wrapped midsole, classic light-blue rubber outsole, medial-side air vent holes for breathability and the unmistakable Jack Purcell smile on the toe cap.</DESCRIPTION>
+		<COLOR>White</COLOR>
+		<DESIGN>Low Top/Canvas</DESIGN>
+		<PRICE>2,400 BAHT</PRICE>
+		<IMAGE>image/1.jpg</IMAGE>
+	</SHOSE>
+	<SHOSE>
+		<TITLE>Timberland</TITLE>
+		<NANE>Timberland Killington Chukka Boots</NAME>
+		<DESCRIPTION>This is the iconic Converse Jack Purcell sneaker that has fundamentally gone unchanged since the 1930s. It has a durable canvas upper, canvas lining and removable EVA insert for comfort, traditional metal eyelets, rubber-wrapped midsole, classic light-blue rubber outsole, medial-side air vent holes for breathability and the unmistakable Jack Purcell smile on the toe cap.</DESCRIPTION>
+		<COLOR>White</COLOR>
+		<DESIGN>Low Top/Canvas</DESIGN>
+		<PRICE>2,400 BAHT</PRICE>
+		<IMAGE>image/1.jpg</IMAGE>
+	</SHOSE>
+	
+</CATALOG>
