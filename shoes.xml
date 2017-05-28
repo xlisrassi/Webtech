@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CATALOG>
+	<div class="nav">
+	<SHOES>
+		<TITLE>CONVERSE</TITLE>
+		<NAME>Converse Jack Purcell</NAME>
+		<DESCRIPTION>This is the iconic Converse Jack Purcell sneaker </DESCRIPTION>
+		<DESCRIPTION1>that has fundamentally gone unchanged since the 1930s. </DESCRIPTION1>
+		<DESCRIPTION2>It has a durable canvas upper, canvas lining and removable EVA insert for comfort,</DESCRIPTION2>
+		<DESCRIPTION3>traditional metal eyelets, rubber-wrapped midsole, classic light-blue rubber outsole,</DESCRIPTION3>
+		<DESCRIPTION4>medial-side air vent holes for breathability </DESCRIPTION4>
+		<DESCRIPTION5>and the unmistakable Jack Purcell smile on the toe cap.</DESCRIPTION5>
+		<COLOR>White</COLOR>
+		<PRICE>2,200 BAHT</PRICE>
+		<IMAGE>Conv1.png</IMAGE>
+	</SHOES>
+	</div>
+	<SHOES>
+		<TITLE>VANS</TITLE>
+		<NAME>Vans old skool</NAME>
+		<DESCRIPTION>Vans The Old Skool, </DESCRIPTION> 
+		<DESCRIPTION1>Vans classic skate shoe </DESCRIPTION1>
+		<DESCRIPTION2>and the first to bare the iconic side stripe, </DESCRIPTION2>
+		<DESCRIPTION3>has a low-top lace-up silhouette with a durable suede </DESCRIPTION3>
+		<DESCRIPTION4>and canvas upper with padded tongue and lining </DESCRIPTION4>
+		<DESCRIPTION5>and Vans signature Waffle Outsole.</DESCRIPTION5>
+		<COLOR>Black</COLOR>
+		<PRICE>2,900 BAHT</PRICE>
+		<IMAGE>Van1.png</IMAGE>
+	</SHOES>
+	<SHOES>
+		<TITLE>NIKE</TITLE>
+		<NAME>Nike Air Yeezy</NAME>
+		<DESCRIPTION>When it comes to retail releases, Kanye West can’t miss. </DESCRIPTION>
+		<DESCRIPTION1>From his work with the Swoosh to his work with the Stripes, </DESCRIPTION1>
+		<DESCRIPTION2>nearly ever silo and color code he’s spawned has sold out and done so in record time. </DESCRIPTION2>
+		<DESCRIPTION3>So, what would we get if we swapped a classic colorway he’s introduced with Nike </DESCRIPTION3>
+		<DESCRIPTION4>on that of a model he made with adidas or Louis Vuitton — or vice versa? Well, </DESCRIPTION4>
+		<DESCRIPTION5>we decided to see exactly what that would look like in the latest Photoshop Friday.</DESCRIPTION5>
+		<COLOR>Grey</COLOR>
+		<PRICE>100,000 BAHT</PRICE>
+		<IMAGE>Nike1.png</IMAGE>
+	</SHOES>
+	<SHOES>
+		<TITLE>ADIDAS</TITLE>
+		<NAME>Adidas Yeezy</NAME>
+		<DESCRIPTION>Announced in 2013 and officially released in 2015, </DESCRIPTION>
+		<DESCRIPTION1>the Yeezy collection is the home of cultural icon Kanye West's footwear </DESCRIPTION1>
+		<DESCRIPTION2>and apparel designs created in partnership with adidas. </DESCRIPTION2>
+		<DESCRIPTION3>Spanning several "Yeezy Seasons", the ongoing collaborative collection features </DESCRIPTION3>
+		<DESCRIPTION4>West's popular Yeezy Boost sneakers as well as </DESCRIPTION4>
+		<DESCRIPTION5>several high-end clothing pieces.</DESCRIPTION5>
+		<COLOR>White</COLOR>
+		<PRICE>32,000 BAHT</PRICE>
+		<IMAGE>Adidas1.png</IMAGE>
+	</SHOES>
+	<SHOES>
+		<TITLE>REEBOK</TITLE>
+		<NAME>Reebok trail running men's all terrain</NAME>
+		<DESCRIPTION>Born from the trenches of Spartan Races, </DESCRIPTION>
+		<DESCRIPTION1>the Reebok AllTerrain Super is engineered with more cushioning </DESCRIPTION1>
+		<DESCRIPTION2>and stability for longer distance races. </DESCRIPTION2>
+		<DESCRIPTION3>The AllTerrain Series has been designed in partnership </DESCRIPTION3>
+		<DESCRIPTION4>with the Reebok Spartan Race community and elite racers. </DESCRIPTION4>
+		<DESCRIPTION5>An innovative, game changing product.</DESCRIPTION5>
+		<COLOR>Solar Yellow-Green-Blue</COLOR>
+		<PRICE>2,400 BAHT</PRICE>
+		<IMAGE>Reebok1.png</IMAGE>
+	</SHOES>
+	<SHOES>
+		<TITLE>TIMBERLAND</TITLE>
+		<NAME>Timberland Killington Chukka Boots</NAME>
+		<DESCRIPTION>Timberland Killington Chukka Boots,</DESCRIPTION>
+		<DESCRIPTION1>Our Killington men's chukkas dominate everything </DESCRIPTION1>
+		<DESCRIPTION2>from city sidewalks to places off the beaten path. </DESCRIPTION2>
+		<DESCRIPTION3>Active athletic outsoles take on the terrain of your day, </DESCRIPTION3>
+		<DESCRIPTION4>while premium leathers and breathable mesh keep your feet </DESCRIPTION4>
+		<DESCRIPTION5>protected and aired out.</DESCRIPTION5>
+		<COLOR>Brown</COLOR>
+		<PRICE>4,400 BAHT</PRICE>
+		<IMAGE>timberland1.png</IMAGE>
+	</SHOES>
+</CATALOG>
